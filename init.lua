@@ -57,12 +57,19 @@ vim.keymap.set('n', '<leader>th', ':tabprevious<CR>', { desc = 'Previous tab' })
 
 -- Plugins
 vim.pack.add({
-	{src = 'https://github.com/morhetz/gruvbox'},
-	{src = 'https://github.com/Vigemus/iron.nvim'},
+	{ src = 'https://github.com/morhetz/gruvbox' },
+	{ src = 'https://github.com/Vigemus/iron.nvim' },
+  	{ src = 'https://github.com/neovim/nvim-lspconfig' },
 })
 
 -- Set colorscheme
 vim.cmd.colorscheme('gruvbox')
+
+-- LSP
+vim.lsp.enable('pyright')
+vim.diagnostic.config({
+	virtual_text = true,
+})
 
 -- Read iron.nvim configuration
 require('iron')
