@@ -5,11 +5,11 @@ local common = require("iron.fts.common")
 
 -- Helper to find the current project's venv
 local function get_venv_python()
-  local venv = vim.fn.getcwd() .. "/.venv/bin/python3"
+  local venv = vim.fn.getcwd() .. "/.venv/bin/ipython3"
   if vim.fn.executable(venv) == 1 then
 	return venv
   else
-	return "python3"  -- fallback to system python3
+	return "ipython3"  -- fallback to system ipython3
   end
 end
 
@@ -26,7 +26,7 @@ iron.setup {
         command = {"zsh"}
       },
       python = {
-        command = { get_venv_python() },  -- or { "ipython", "--no-autoindent" }
+        command = { get_venv_python(), '--no-autoindent' },  -- or { "ipython", "--no-autoindent" }
         format = common.bracketed_paste_python,
         block_dividers = { "# %%", "#%%" },
         env = {PYTHON_BASIC_REPL = "1"} --this is needed for python3.13 and up.
