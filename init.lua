@@ -46,6 +46,12 @@ vim.keymap.set('v', '>', '>gv')
 -- Open terminal
 vim.keymap.set('n', '<leader>h', ':12 sp term://zsh<CR>i', { desc = 'Open terminal' })
 
+-- netrw
+vim.g.netrw_liststyle = 3
+vim.g.netrw_banner = 0
+vim.g.netrw_browse_split = 3
+vim.keymap.set('n', '<leader>e', ':Lex<CR>:vertical resize 36<CR>', { desc = 'Open netrw' })
+
 -- Tabs
 vim.o.showtabline = 1
 vim.keymap.set('n', '<leader>tn', ':tabnew<CR>', { desc = 'New tab' })
