@@ -59,6 +59,13 @@ vim.keymap.set('n', '<leader>tx', ':tabclose<CR>', { desc = 'Close tab' })
 vim.keymap.set('n', '<leader>tl', ':tabnext<CR>', { desc = 'Next tab' })
 vim.keymap.set('n', '<leader>th', ':tabprevious<CR>', { desc = 'Previous tab' })
 
+-- Autoclosing
+vim.keymap.set('i', '(', '()<Esc>i')
+vim.keymap.set('i', '[', '[]<Esc>i')
+vim.keymap.set('i', '{', '{}<Esc>i')
+vim.keymap.set('i', '"', '""<Esc>i')
+vim.keymap.set('i', "'", "''<Esc>i")
+
 -- Plugins
 vim.pack.add({
 	{ src = 'https://github.com/morhetz/gruvbox' },
