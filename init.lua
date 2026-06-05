@@ -78,6 +78,7 @@ vim.pack.add({
 	{ src = 'https://github.com/hrsh7th/nvim-cmp'},
 	{ src = 'https://github.com/hrsh7th/cmp-vsnip'},
 	{ src = 'https://github.com/hrsh7th/vim-vsnip'},
+	{ src = 'https://github.com/lewis6991/gitsigns.nvim'},
 })
 
 -- require plugin configs
