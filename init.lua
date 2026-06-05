@@ -3,7 +3,6 @@ vim.o.relativenumber = true
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 vim.o.winborder = 'rounded' -- Adds border to windows
--- vim.o.wrap = false
 vim.o.scrolloff = 10 -- Keeps the cursor 10 lines from bottom and top
 vim.o.sidescrolloff = 8
 
@@ -46,7 +45,6 @@ vim.keymap.set('v', '>', '>gv')
 
 -- Open terminal
 vim.keymap.set('n', '<leader>h', ':12 sp term://zsh<CR>i', { desc = 'Open terminal' })
---vim.keymap.set('n', '<leader>e', ':20 vs term://lf<CR>', { desc = 'Open terminal' })
 
 -- Tabs
 vim.o.showtabline = 1
@@ -59,18 +57,26 @@ vim.keymap.set('n', '<leader>th', ':tabprevious<CR>', { desc = 'Previous tab' })
 vim.pack.add({
 	{ src = 'https://github.com/morhetz/gruvbox' },
 	{ src = 'https://github.com/Vigemus/iron.nvim' },
-  	{ src = 'https://github.com/neovim/nvim-lspconfig' },
+	{ src = 'https://github.com/neovim/nvim-lspconfig' },
+	{ src = 'https://github.com/hrsh7th/cmp-nvim-lsp'},
+	{ src = 'https://github.com/hrsh7th/cmp-buffer'},
+	{ src = 'https://github.com/hrsh7th/cmp-path'},
+	{ src = 'https://github.com/hrsh7th/cmp-cmdline'},
+	{ src = 'https://github.com/hrsh7th/nvim-cmp'},
+	{ src = 'https://github.com/hrsh7th/cmp-vsnip'},
+	{ src = 'https://github.com/hrsh7th/vim-vsnip'},
 })
+
+-- require plugin configs
+require('iron')
+require('nvim-cmp')
 
 -- Set colorscheme
 vim.cmd.colorscheme('gruvbox')
 
 -- LSP
 vim.lsp.enable('pyright')
+
 vim.diagnostic.config({
 	virtual_text = true,
 })
-
--- Read iron.nvim configuration
-require('iron')
-
