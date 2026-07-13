@@ -68,25 +68,26 @@ vim.keymap.set('i', "'", "''<Esc>i")
 
 -- Plugins
 vim.pack.add({
-	{ src = 'https://github.com/morhetz/gruvbox' },
 	{ src = 'https://github.com/Vigemus/iron.nvim' },
 	{ src = 'https://github.com/neovim/nvim-lspconfig' },
-	{ src = 'https://github.com/hrsh7th/cmp-nvim-lsp'},
-	{ src = 'https://github.com/hrsh7th/cmp-buffer'},
-	{ src = 'https://github.com/hrsh7th/cmp-path'},
-	{ src = 'https://github.com/hrsh7th/cmp-cmdline'},
-	{ src = 'https://github.com/hrsh7th/nvim-cmp'},
-	{ src = 'https://github.com/hrsh7th/cmp-vsnip'},
-	{ src = 'https://github.com/hrsh7th/vim-vsnip'},
-	{ src = 'https://github.com/lewis6991/gitsigns.nvim'},
+	{ src = 'https://github.com/hrsh7th/cmp-nvim-lsp' },
+	{ src = 'https://github.com/hrsh7th/cmp-buffer' },
+	{ src = 'https://github.com/hrsh7th/cmp-path' },
+	{ src = 'https://github.com/hrsh7th/cmp-cmdline' },
+	{ src = 'https://github.com/hrsh7th/nvim-cmp' },
+	{ src = 'https://github.com/hrsh7th/cmp-vsnip' },
+	{ src = 'https://github.com/hrsh7th/vim-vsnip' },
+	{ src = 'https://github.com/lewis6991/gitsigns.nvim' },
+	{ src = 'https://github.com/nvim-lualine/lualine.nvim' },
 })
 
 -- require plugin configs
 require('iron')
 require('nvim-cmp')
+require('lualine_config')
 
 -- Set colorscheme
-vim.cmd.colorscheme('gruvbox')
+vim.cmd.colorscheme('retrobox')
 
 -- LSP
 vim.lsp.enable('pyright')
@@ -94,3 +95,6 @@ vim.lsp.enable('pyright')
 vim.diagnostic.config({
 	virtual_text = true,
 })
+
+-- Autocompile
+vim.api.nvim_create_autocmd('BufWritePost', {pattern='*.typ', command=':silent !typst compile %'})
