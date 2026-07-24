@@ -98,3 +98,4 @@ vim.diagnostic.config({
 
 -- Autocompile
 vim.api.nvim_create_autocmd('BufWritePost', {pattern='*.typ', command=':silent !typst compile %'})
+vim.api.nvim_create_autocmd('BufWritePost', {pattern='*.tex', command=':silent !pdflatex %'})
