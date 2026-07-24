@@ -12,6 +12,10 @@ vim.o.smartcase = true -- Case sensitive search if uppercase in search
 vim.o.hlsearch = false -- Don't highlight search results
 -- vim.o.incsearch = true -- Show matches as you type
 
+-- Spell settings
+vim.opt_local.spell = true
+vim.opt_local.spelllang = 'en_us'
+
 -- Visual settings
 vim.o.termguicolors = true -- Enable 24-bit- colors
 vim.o.colorcolumn = '80' -- Show column at 80 characters
