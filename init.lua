@@ -70,6 +70,18 @@ vim.keymap.set('i', '{', '{}<Esc>i')
 vim.keymap.set('i', '"', '""<Esc>i')
 vim.keymap.set('i', "'", "''<Esc>i")
 
+--Symbol Column
+vim.diagnostic.config({
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = "󰅚",
+      [vim.diagnostic.severity.WARN]  = "󰀪",
+      [vim.diagnostic.severity.HINT]  = "󰌶",
+      [vim.diagnostic.severity.INFO]  = "󰋼",
+    },
+  },
+})
+
 -- Plugins
 vim.pack.add({
 	{ src = 'https://github.com/Vigemus/iron.nvim' },
