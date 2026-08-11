@@ -84,3 +84,4 @@ vim.lsp.config('pyright', {
 capabilities = capabilities
 })
 vim.lsp.enable('pyright')
+vim.lsp.enable('texlab')

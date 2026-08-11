@@ -20,7 +20,7 @@ vim.opt_local.spelllang = 'en_us'
 vim.o.termguicolors = true -- Enable 24-bit- colors
 vim.o.colorcolumn = '80' -- Show column at 80 characters
 vim.o.signcolumn = 'yes' -- Always show sign column
-vim.o.showmatch = true -- Hightlight matching brackets
+vim.o.showmatch = true -- Nightlight matching brackets
 
 vim.o.clipboard = 'unnamedplus' -- Set system clipboard as default
 
@@ -43,7 +43,7 @@ vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Move to right window' })
 vim.keymap.set('n', '<C-j>', '<C-w>j', { desc = 'Move to bottom window' })
 vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Move to top window' })
 
--- Better indeting in visual mode
+-- Better indenting in visual mode
 vim.keymap.set('v', '<', '<gv')
 vim.keymap.set('v', '>', '>gv')
 
@@ -95,6 +95,7 @@ vim.cmd.colorscheme('retrobox')
 
 -- LSP
 vim.lsp.enable('pyright')
+vim.lsp.enable('texlab')
 
 vim.diagnostic.config({
 	virtual_text = true,
