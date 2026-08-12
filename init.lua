@@ -112,7 +112,8 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 -- Set colorscheme
-vim.cmd.colorscheme('srcery')
+vim.cmd.colorscheme('retrobox')
+vim.api.nvim_create_autocmd('BufEnter', {pattern='*.py', command=':colorscheme srcery'})
 
 -- LSP
 vim.lsp.enable('pyright')
