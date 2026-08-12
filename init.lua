@@ -95,6 +95,8 @@ vim.pack.add({
 	{ src = 'https://github.com/hrsh7th/vim-vsnip' },
 	{ src = 'https://github.com/lewis6991/gitsigns.nvim' },
 	{ src = 'https://github.com/nvim-lualine/lualine.nvim' },
+	{ src = 'https://github.com/nvim-treesitter/nvim-treesitter' },
+	{ src = 'https://github.com/srcery-colors/srcery-vim' },
 })
 
 -- require plugin configs
@@ -102,8 +104,15 @@ require('iron')
 require('nvim-cmp')
 require('lualine_config')
 
+-- Treesitter config
+require('nvim-treesitter').install{ 'python', 'latex'}
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'python', 'latex' },
+  callback = function() vim.treesitter.start() end,
+})
+
 -- Set colorscheme
-vim.cmd.colorscheme('retrobox')
+vim.cmd.colorscheme('srcery')
 
 -- LSP
 vim.lsp.enable('pyright')

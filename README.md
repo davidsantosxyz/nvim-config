@@ -2,7 +2,8 @@
 
 My minimalistic neovim config.
 
-Optional dependencies:
+Requirements:
 - pyright
 - texlab
 - ipython3 
+- tree-sitter-cli
